@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scanner Result</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/button.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/page.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .table{
+        overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+    <div class="">
+        <section class="ftco-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center mb-5">
+                        <h2 class="heading-section">Scanner Latest Status</h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="wrap">
+                            <div class="img" style="background-image:url('./static/img/beach.jpg')">
+                            </div>
+                            <div class="login-wrap p-4 p-md-5">
+                                <div class="d-flex">
+                                    <div class="w-100">
+                                        <div style="overflow-y: auto;height:400px">
+                                          <!--<b style="font-size: 30px;">{{success}}</b>-->
+                                            <table class="table table-border">
+                                                <thead>
+                                                    <tr>
+                                                        <th>IP Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for ip in ipStatus %}
+                                                        <tr class="success">
+                                                            <td>
+                                                                <b>{{ip}}<br/>
+                                                            </td>
+                                                        </tr> 
+                                                    {%endfor%}
+                                                </tbody>
+                                            </table>
+
+                                            <table class="table table-border">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Protocols</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for protocol in protocols %}
+                                                        <tr class="success">
+                                                            <td>
+                                                                <b>{{protocol}}<br/>
+                                                            </td>
+                                                        </tr> 
+                                                    {%endfor%}
+                                                </tbody>
+                                            </table>
+
+                                            <table class="table table-border">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Open Ports</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for openPort in openPorts %}
+                                                        <tr class="success">
+                                                            <td>
+                                                                <b>{{openPort}}</b><br/>
+                                                            </td>
+                                                        </tr> 
+                                                    {%endfor%}
+                                                </tbody>
+                                            </table>
+
+                                            <table class="table table-border">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Info</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="success">
+                                                        <td>
+                                                            <b>{{scaninfo}}</b><br/>
+                                                        </td>
+                                                    </tr> 
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

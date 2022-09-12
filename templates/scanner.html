@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scanner Result</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/button.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/page.css')}}">
+</head>
+<body>
+    <div class="">
+        <section class="ftco-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center mb-5">
+                        <h2 class="heading-section">Nmap Scanner</h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-9 col-lg-8">
+                        <div class="wrap">
+                            <div class="img" style="background-image:url('./static/img/beach.jpg')">
+                            </div>
+                            <div class="login-wrap p-4 p-md-5">
+                                <div class="d-flex">
+                                    <div class="w-100">
+                                        <h3 class="mb-4" style="font-size:22px">Python Nmap Scanner App</h3>
+                                    </div>
+                                </div>
+
+                                <form method="post" action="/scanner_result" class="signin-form">
+                                    <div class="form-group mt-3">
+                                        <input type="text" class="form-control" required="true" name="ip">
+                                        <label class="form-control-placeholder" for="ip" style="font-size: 13px !important;">Ip Address or Hostname(<b style="text-transform:lowercase !important;">xyz.com</b>)</label>
+                                    </div>
+                                    <div class="form-group" style="margin-top: 30px;clear: both;">
+                                        <label class="form-control-placeholder" for="type" style="opacity:0.9 !important;color: #000;">Type</label>
+                                        <div class="col-auto my-1 p-0">
+                                            <select class="custom-select mr-sm-2 form-control" id="inlineFormCustomSelect" style="font-size: 20px;opacity: .6;" name="type" required="true">
+                                                <option>Type</option>
+                                                <option value="synack">SYN / ACK Scan</option>
+                                                <option value="udp">UDP Scan</option> 
+                                                <option value="comprehensive">Comprehensive Scan</option>
+                                                <option value="multiple">Multiple IP Input</option>
+                                            </select>
+                                          </div>
+                                    </div>
+                                    <label style="text-align: left !important; display:block;font-size: 17px !important;text-transform:lowercase !important;">For Example : (<b>1-365, 50-1000</b>)</label>
+                                    <div class="form-group" style="margin-top: 5px;">
+                                        <input type="text" class="form-control" required="true" name="port_range">
+                                        <label class="form-control-placeholder" for="ip" >Port Range</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="form-control btn btn-primary rounded submit px-4" style="font-size: 17px;">Scan</button>
+                                    </div>
+                                    <br>
+
+                                    <div class="form-group">
+                                        <a href="/scanner_os" class="form-control btn btn-primary rounded submit px-4" style="font-size: 17px;">Go to Os Detection Page</a>
+                                    </div>
+                                    <div class="form-group">
+                                        <a href="/scanner_regular" class="form-control btn btn-primary rounded submit px-4" style="font-size: 17px;">Go to Regular Scanner Page</a>
+                                    </div>
+                                    <div class="form-group">
+                                        <a href="/scanner_ping" class="form-control btn btn-primary rounded submit px-4" style="font-size: 17px;">Go to Ping Scanner Page</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
